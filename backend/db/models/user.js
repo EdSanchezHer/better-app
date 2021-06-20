@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.STRING,
 				allowNull: false,
 				validate: {
-					len: [4, 30],
+					len: [3, 30],
 					isNotEmail(value) {
 						if (Validator.isEmail(value)) {
 							throw new Error("Cannot be an email.");
@@ -39,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
 					exclude: ["hashedPassword", "email", "createdAt", "updatedAt"],
 				},
 			},
-			scope: {
+			scopes: {
 				currentUser: {
 					attributes: { exclude: ["hashedPassword"] },
 				},
@@ -56,7 +56,7 @@ module.exports = (sequelize, DataTypes) => {
 		const { id, username, email } = this;
 		return { id, username, email };
 	};
-	User.prototype.validatePassword = function () {
+	User.prototype.validatePassword = function (password) {
 		return bcrypt.compareSync(password, this.hashedPassword.toString());
 	};
 	User.getCurrentUserById = async function (id) {
