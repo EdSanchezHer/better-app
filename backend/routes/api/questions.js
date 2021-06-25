@@ -22,8 +22,18 @@ router.get(
 router.post(
 	"/",
 	asyncHandler(async (req, res) => {
-    const question = await 
-  })
+		const { userId, question, description } = req.body;
+
+		console.log(userId, question, description);
+
+		const newQuestion = await Question.create({
+			ownerId: userId,
+			title: question,
+			description: description,
+		});
+
+		return res.redirect("/");
+	})
 );
 // Get one question
 

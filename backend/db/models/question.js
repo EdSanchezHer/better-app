@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
 	const Question = sequelize.define(
 		"Question",
 		{
-			ownerId: DataTypes.INTEGER,
+			ownerId: { type: DataTypes.INTEGER, allowNull: false },
 			title: { type: DataTypes.STRING, allowNull: false },
 			description: { type: DataTypes.TEXT, allowNull: true },
 		},
