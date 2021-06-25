@@ -7,21 +7,21 @@ module.exports = {
 			[
 				{
 					userId: 1,
-					questionId: 2,
+					questionId: 1,
 					answer: "To be",
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
 				{
 					userId: 1,
-					questionId: 3,
+					questionId: 2,
 					answer: "Always plan ahead and remove all distractions.",
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
 				{
 					userId: 1,
-					questionId: 4,
+					questionId: 3,
 					answer: "Make a list of interests. Begin to explore it.",
 					createdAt: new Date(),
 					updatedAt: new Date(),
