@@ -10,8 +10,11 @@ module.exports = (sequelize, DataTypes) => {
 		{}
 	);
 	Question.associate = function (models) {
-		Question.belongsTo(models.User, { foreignKey: userId });
-		Question.hasMany(models.Answer, { foreignKey: questionId });
+		Question.belongsTo(models.User, { foreignKey: "ownerId" });
+		Question.hasMany(models.Answer, { foreignKey: "questionId" });
+	};
+	Question.listAll = async function () {
+		return await Question.findAll();
 	};
 	return Question;
 };

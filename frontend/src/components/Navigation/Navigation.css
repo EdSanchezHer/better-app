@@ -13,5 +13,78 @@ li {
 .nav-container {
 	background-color: var(--main-color);
 	min-height: 100%;
-	padding: 5px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 50px;
+}
+
+.main-title {
+	font-family: Lora, Times, serif;
+	font-size: 30px;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+}
+
+.search {
+	height: 3em;
+	width: 40em;
+	box-shadow: none;
+	border-radius: 2px;
+	border-style: none;
+}
+
+.logout-button {
+	font-family: inherit;
+	height: 50px;
+	background-color: var(--main-color);
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	right: 1px;
+}
+
+.dropdown-content ul {
+	padding: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown-content a {
+	color: white;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	background-color: var(--main-color);
+	text-align: center;
+	margin: 10px -10px;
+	margin-bottom: -10px;
+}
+
+.dropdown-content a:hover {
+	background-color: #182749;
+}
+
+.current-user {
+	color: white;
+	margin: 5px 0;
 }

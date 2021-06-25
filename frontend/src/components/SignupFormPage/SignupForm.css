@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 	width: 100%;
 	position: absolute;
-	min-height: 95%;
+	min-height: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -18,7 +18,7 @@
 select {
 	width: 100%;
 	padding: 15px 20px;
-	margin: 20px 0;
+	margin: 10px 0;
 	display: inline-block;
 	border: 1px solid #ccc;
 	border-radius: 4px;
@@ -49,10 +49,11 @@ input[type="submit"]:hover {
 	border-radius: 5px;
 	background-color: #f2f2f2;
 	padding: 20px;
-	max-width: 400px;
+	max-width: 30em;
 }
 
 .title {
+	margin-top: 0;
 	margin-bottom: 15px;
 	font-family: Lora, Times, serif;
 	font-size: 50px;

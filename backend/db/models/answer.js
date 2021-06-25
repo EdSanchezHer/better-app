@@ -5,13 +5,13 @@ module.exports = (sequelize, DataTypes) => {
 		{
 			userId: DataTypes.INTEGER,
 			questionId: DataTypes.INTEGER,
-			answer: DataTypes.TEXT,
+			answer: { type: DataTypes.TEXT, allowNull: false },
 		},
 		{}
 	);
 	Answer.associate = function (models) {
-		Answer.belongsTo(models.User, { foreignKey: userId });
-		Answer.belongsTo(models.Question, { foreignKey: questionId });
+		Answer.belongsTo(models.User, { foreignKey: "userId" });
+		Answer.belongsTo(models.Question, { foreignKey: "questionId" });
 	};
 	return Answer;
 };

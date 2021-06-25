@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 
 import "./SignupForm.css";
@@ -35,7 +35,7 @@ function SignupFormPage() {
 	return (
 		<>
 			<div className="container">
-				<form className="form-border" onSubmit={handleSubmit}>
+				<form className="form-border shadow" onSubmit={handleSubmit}>
 					<h1 className="title">Better</h1>
 					<p className="subtitle">A place to help one another</p>
 					<ul>
@@ -90,6 +90,8 @@ function SignupFormPage() {
 					<button className="form-button" type="submit">
 						Sign Up
 					</button>
+					<hr></hr>
+					<Link to="/login">Already a member? Click here!</Link>
 				</form>
 			</div>
 		</>

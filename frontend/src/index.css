@@ -5,8 +5,9 @@
 body {
 	margin: 0;
 	font-family: Lato, Times, serif;
+	background-color: rgb(223 223 223);
 }
 
 :root {
-	--main-color: #3156a7;
+	--main-color: #2a3e6b;
 }
