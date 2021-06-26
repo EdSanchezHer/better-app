@@ -2,6 +2,7 @@ import { csrfFetch } from "./csrf";
 
 // Action types
 const LOAD = "questions/LOAD";
+const ADD_QUESTION = "questions/ADD";
 
 // Actions
 
@@ -9,6 +10,11 @@ const loadQuestions = (list) => ({
 	type: LOAD,
 	list,
 });
+
+// const addQuestion = (question) => ({
+// 	type: ADD_QUESTION,
+// 	question,
+// });
 
 // Dispatch Methods
 
@@ -21,9 +27,32 @@ export const getQuestions = () => async (dispatch) => {
 	}
 };
 
+export const addQuestion = (data) => async (dispatch) => {
+	console.log(data);
+	const response = await csrfFetch(`/api/questions`, {
+		method: "post",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(data),
+	});
+};
+// export const login = (user) => async (dispatch) => {
+// 	const { credential, password } = user;
+// 	const response = await csrfFetch("/api/session", {
+// 		method: "POST",
+// 		body: JSON.stringify({
+// 			credential,
+// 			password,
+// 		}),
+// 	});
+// 	const data = await response.json();
+// 	dispatch(setUser(data.user));
+// 	retu
+
 // Reducer
 
-const initialState = { questions: [] };
+const initialState = { questions: {} };
 
 const questionReducer = (state = initialState, action) => {
 	switch (action.type) {
@@ -32,10 +61,7 @@ const questionReducer = (state = initialState, action) => {
 			action.list.forEach((question) => {
 				allQuestions[question.id] = question;
 			});
-			return {
-				...allQuestions,
-				...state,
-			};
+			return allQuestions;
 		}
 		default:
 			return state;

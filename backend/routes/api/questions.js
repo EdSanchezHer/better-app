@@ -9,6 +9,13 @@ const { Question } = require("../../db/models");
 
 const router = express.Router();
 
+const validateQuestion = [
+	check("title")
+		.exists({ checkFalsy: true })
+		.withMessage("Please provide a question."),
+	handleValidationErrors,
+];
+
 // Get all questions
 router.get(
 	"/",
@@ -21,14 +28,15 @@ router.get(
 // Post a question
 router.post(
 	"/",
+	validateQuestion,
 	asyncHandler(async (req, res) => {
-		const { userId, question, description } = req.body;
+		const { userId, title, description } = req.body;
 
-		console.log(userId, question, description);
+		console.log(userId, title, description);
 
 		const newQuestion = await Question.create({
 			ownerId: userId,
-			title: question,
+			title: title,
 			description: description,
 		});
 
