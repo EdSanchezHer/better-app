@@ -34,7 +34,7 @@ function LoginFormPage() {
 					))}
 				</ul>
 				<h1 className="title">Welcome back</h1>
-				<p className="subtitle">Questions await!</p>
+				<p className="subtitle">Answers await!</p>
 				<label>
 					Username or email
 					<input

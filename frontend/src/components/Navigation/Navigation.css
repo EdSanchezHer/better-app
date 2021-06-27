@@ -43,7 +43,7 @@ li {
 	padding: 14px 20px;
 	margin: 8px 0;
 	border: none;
-	border-radius: 10px;
+	border-radius: 2px;
 	cursor: pointer;
 }
 
@@ -58,7 +58,8 @@ li {
 	background-color: #f9f9f9;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
-	right: 1px;
+	right: 0px;
+	margin-top: 2px;
 }
 
 .dropdown-content ul {
@@ -103,4 +104,30 @@ li {
 	overflow: auto; /* Enable scroll if needed */
 	background-color: rgb(0, 0, 0); /* Fallback color */
 	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.ask-button {
+	font-family: inherit;
+	width: 100%;
+	background-color: #3e4e79;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.ask-button:hover {
+	background-color: #182749;
+}
+
+.floating-title {
+	margin-top: 0;
+	margin-bottom: 15px;
+	font-family: Lora, Times, serif;
+	font-size: 40px;
+	text-align: center;
+	font-weight: lighter;
+	color: var(--main-color);
 }

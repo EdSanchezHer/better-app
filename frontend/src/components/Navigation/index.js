@@ -72,7 +72,7 @@ function Navigation({ isLoaded }) {
 					></input>
 				</div>
 				<div>
-					<button onClick={showForm} className="form-button">
+					<button onClick={showForm} className="ask-button">
 						Ask Question
 					</button>
 				</div>
@@ -83,7 +83,7 @@ function Navigation({ isLoaded }) {
 			<div className="hidable-form" style={{ display: questionForm }}>
 				<div className="modal">
 					<form className="form-border shadow" onSubmit={handleSubmit}>
-						<h1 className="title">Question</h1>
+						<h1 className="floating-title">Ask</h1>
 						<ul>
 							{errors.map((error, idx) => (
 								<li key={idx}>{error}</li>
@@ -102,7 +102,7 @@ function Navigation({ isLoaded }) {
 						</label>
 						<label>
 							Description (Optional)
-							<input
+							<textarea
 								placeholder="Add more details"
 								className="input-field"
 								type="text"

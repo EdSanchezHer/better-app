@@ -3,7 +3,7 @@
 	grid-template-columns: 20% 1fr;
 	grid-template-rows: auto;
 	grid-template-areas: "sidebar questions";
-	margin: 1em 10em;
+	margin: 1em 15%;
 }
 
 .sidebar {
@@ -28,7 +28,7 @@
 .question-border {
 	display: flex;
 	justify-content: space-between;
-	border-radius: 5px;
+	border-radius: 2px;
 	background-color: #f2f2f2;
 	padding: 20px;
 	margin: 15px 0px;
@@ -61,7 +61,19 @@
 	padding: 14px 20px;
 	margin: 8px 0;
 	border: none;
-	border-radius: 10px;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.find-button {
+	font-family: inherit;
+	width: 10em;
+	background-color: #2a3e6b;
+	color: white;
+	padding: 5px 5px;
+	margin-left: 5px;
+	border: none;
+	border-radius: 2px;
 	cursor: pointer;
 }
 

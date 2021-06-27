@@ -38,7 +38,9 @@ export default function Main() {
 									<h3 class="question">{question.title}</h3>
 									<div className="answers">{question.description}</div>
 								</div>
-								<Link to={`/questions/${question.id}`}>Find answers</Link>
+								<Link to={`/questions/${question.id}`}>
+									<button className="find-button">See answers</button>
+								</Link>
 							</div>
 						);
 					})}

@@ -1,5 +1,5 @@
 /* TODO Add site wide styles */
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap");
 
 body {
@@ -8,10 +8,28 @@ body {
 	background-color: rgb(223 223 223);
 }
 
-input[type="text"] {
+input[type="text"],
+.input-field {
 	font-family: Lato, Times, serif;
 }
 
 :root {
 	--main-color: #2a3e6b;
+}
+
+a {
+	text-decoration: none;
+}
+
+textarea:focus,
+input:focus {
+	outline: none;
+	background-color: #849dd61f;
+	/* box-shadow: inset -2px -5px -4px 5px 1px #374ea169; */
+}
+
+.search:focus {
+	outline: none;
+	background-color: #ccd1e9;
+	/* box-shadow: inset -2px -5px -4px 5px 1px #374ea169; */
 }
