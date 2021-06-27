@@ -77,7 +77,7 @@ function SignupFormPage() {
 						/>
 					</label>
 					<label>
-						Confirm Password
+						Confirm password
 						<input
 							placeholder="Confirm your password"
 							className="input-field"
@@ -91,7 +91,9 @@ function SignupFormPage() {
 						Sign Up
 					</button>
 					<hr></hr>
-					<Link to="/login">Already a member? Click here!</Link>
+					<Link to="/login">
+						<p className="form-link">Already a member? Click here!</p>
+					</Link>
 				</form>
 			</div>
 		</>

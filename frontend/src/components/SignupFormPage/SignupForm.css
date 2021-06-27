@@ -66,3 +66,9 @@ input[type="submit"]:hover {
 	text-align: center;
 	opacity: 0.6;
 }
+
+.form-link {
+	text-align: center;
+	margin: 0;
+	margin-top: 15px;
+}

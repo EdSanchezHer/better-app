@@ -1,17 +1,23 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { getQuestions } from "../../store/questions";
+import { Redirect, Link } from "react-router-dom";
 
 import "./Main.css";
 
 export default function Main() {
 	const dispatch = useDispatch();
-	const questions = useSelector((state) => Object.values(state.questions));
+	const sessionUser = useSelector((state) => state.session.user);
+	const questions = useSelector((state) =>
+		Object.values(state.questions).reverse()
+	);
 
 	useEffect(() => {
 		dispatch(getQuestions());
 		console.log(questions);
 	}, [dispatch]);
+
+	if (!sessionUser) return <Redirect to="/signup" />;
 
 	return (
 		<>
@@ -30,9 +36,9 @@ export default function Main() {
 							<div className="question-border shadow">
 								<div>
 									<h3 class="question">{question.title}</h3>
-									<div className="answers">Answers go here</div>
+									<div className="answers">{question.description}</div>
 								</div>
-								<button className="answers-button">See all answers</button>
+								<Link to={`/questions/${question.id}`}>Find answers</Link>
 							</div>
 						);
 					})}

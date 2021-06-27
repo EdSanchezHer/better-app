@@ -33,10 +33,10 @@ function LoginFormPage() {
 						<li key={idx}>{error}</li>
 					))}
 				</ul>
-				<h1 className="title">Welcome Back</h1>
+				<h1 className="title">Welcome back</h1>
 				<p className="subtitle">Questions await!</p>
 				<label>
-					Username or Email
+					Username or email
 					<input
 						className="input-field"
 						placeholder="Your name or username"
@@ -61,7 +61,9 @@ function LoginFormPage() {
 					Log In
 				</button>
 				<hr></hr>
-				<Link to="/signup">Firs time? Click here!</Link>
+				<Link to="/signup">
+					<p className="form-link">Firs time? Click here!</p>
+				</Link>
 			</form>
 		</div>
 	);

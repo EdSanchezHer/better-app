@@ -5,7 +5,7 @@ const { check } = require("express-validator");
 const { setTokenCookie, restoreUser } = require("../../utils/auth");
 const { handleValidationErrors } = require("../../utils/validation");
 
-const { Question } = require("../../db/models");
+const { Question, Answer } = require("../../db/models");
 
 const router = express.Router();
 
@@ -20,7 +20,8 @@ const validateQuestion = [
 router.get(
 	"/",
 	asyncHandler(async (req, res) => {
-		const questions = await Question.listAll();
+		const questions = await Question.findAll();
+		console.log(questions);
 		return res.json(questions);
 	})
 );
@@ -45,6 +46,8 @@ router.post(
 );
 // Get one question
 
+// router.get();
+
 // Update a question
 
 // Delete a question
@@ -52,5 +55,14 @@ router.post(
 // Add answer to question
 
 // Get answers to question
+router.get(
+	"/:id/answers",
+	asyncHandler(async (req, res) => {
+		const questionId = req.params.id;
+		const answers = await Answer.findAll({ where: { questionId } });
+
+		return res.json(answers);
+	})
+);
 
 module.exports = router;

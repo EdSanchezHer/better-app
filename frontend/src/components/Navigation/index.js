@@ -61,9 +61,8 @@ function Navigation({ isLoaded }) {
 	return (
 		<>
 			<div className="nav-container">
-				<Link path="/" className="main-title">
-					{" "}
-					Better{" "}
+				<Link to="/" className="main-title">
+					Better
 				</Link>
 				<div>
 					<input
